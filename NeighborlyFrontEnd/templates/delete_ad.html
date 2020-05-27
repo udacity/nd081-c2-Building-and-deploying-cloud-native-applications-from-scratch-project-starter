@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+    <div class="container">
+        <div>
+            <h2>Delete {{ ad.title }}</h2>
+            <form action="/ad/delete/{{ ad._id['$oid'] }}" method="post">
+                <p>The action cannot be undone.</p>
+                <button type="submit" class="btn btn-danger">Delete</button>
+                <a class="btn btn-default" href="/">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

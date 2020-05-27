@@ -1,0 +1,73 @@
+{% extends "bootstrap/base.html" %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block styles %}
+        {{ super() }}
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet"
+              href="{{ url_for('.static', filename='css/main.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Mako&display=swap" rel="stylesheet">
+        <style>
+            .logo {
+                width: 75px;
+                float: left;
+                margin-right: 15px;
+            }
+
+            .headshot {
+                width: 200px;
+                height: 250px;
+                float: left;
+                margin-right: 15px;
+            }
+
+            .form-group {
+                max-width: 500px;
+            }
+
+            .actions {
+                padding: 10px 0;
+            }
+
+            .glyphicon-euro {
+                font-size: 12px;
+            }
+        </style>
+
+    {% endblock %}
+    {% if title %}
+        <title>{{ title }} - Neighborly </title>
+    {% else %}
+        <title>Neighborly</title>
+    {% endif %}
+</head>
+
+<body>
+{% block navbar %}
+    <nav class="navbar navbar-light bg-app">
+        <a class="navbar-brand" href="/">
+            Neighborly App
+        </a>
+    </nav>
+    <div class="container">
+        <header class="page-header">
+            <div class="branding">
+                
+               
+            </div>
+        </header>
+    </div>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+</body>
+
+</html>

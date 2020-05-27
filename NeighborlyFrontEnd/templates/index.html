@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Home Feed {% endblock %}
+{% block content %}
+<div class="container">
+     <div class="row">
+            <div class="col-md-3">
+               <div class="card">
+                   <ul class="list-group list-group-flush">
+                         <li class="list-group-item">
+                            <div class="h5">My Neighborhood</div>
+                            <p>Welcome to your community app.</p>
+                         </li>
+                     </ul>
+                    <ul class="list-group list-group-flush">
+                         <li class="list-group-item">
+                            <div class="h6 text-muted"><a href="/">Marketplace</a></div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Upcoming Events</div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="h6 text-muted">Crime and Safety</div>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- end col-md-3 -->
+
+            <div class="col-md-6">
+                <!--- Advertestiment section -->
+                <h3> Community Marketplace </h3>
+                <div class="mx-auto add-div"><a id="add-ad-button" class="btn btn-neighborly" href="/ad/add">Create a new ad </a></div>
+                {% for a in ads %}
+                <div class="panel">
+                    <div class="panel-body panel-neighborly">
+                        <div class="panel-title"> <a href="/ad/view/{{ a._id['$oid'] }}">{{a.title}}</a></div>
+                        <p class="text-muted">Email: {{a.email}}</p>
+                        <p class="text-muted">{{a.description}}</p>
+                        <p class="text-muted">Price: {{ a.price}}</p>
+                        <p><img class="img-small" width="200" src={{a.imgUrl}}></p>
+                    </div><!-- end panel body -->
+                    <div class="panel-footer">
+                        <a class="btn btn-warning btn-xs" href="ad/edit/{{ a._id['$oid'] }}">Update</a>
+                        <a class="btn btn-danger btn-xs" href="ad/delete/{{ a._id['$oid'] }}">Delete</a>
+                    </div>
+                 </div><!-- end panel  -->
+                {% endfor %}       
+                <h3 class="ml-2"> General Posts </h3>
+                {% for p in posts %}
+                <div class="panel">
+                    <div class="panel-body panel-neighborly">
+                        <div class="panel-title">{{p.title}}</div>
+                        <p class="text-muted"> {{ p.description }}</p>
+                        <p><img class="img-small" width="200" src={{p.imgUrl}}></p>
+                    </div><!-- end card-body -->
+                 </div><!-- end card -->
+                {% endfor %}       
+               
+         </div><!-- end col-md-6 -->
+        <div class="col-md-3">
+            <div class="card">
+                    <div class="card-body">
+                    <div class="h5">Advertisements</div>
+                    <div class="h7 text-muted">Maps</div>
+                    <div class="h7">Recommendations</div>
+                </div>
+            </div>
+        </div><!-- end col-md-3 -->
+    </div><!-- end row -->
+</div
+{% endblock %}
+
+  

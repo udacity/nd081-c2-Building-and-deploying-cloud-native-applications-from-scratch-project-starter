@@ -1,0 +1,79 @@
+.navbar {
+    border-radius: 0px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 26px;
+    line-height: 20px;
+    font-family: 'Mako';
+}
+
+a.navbar-brand {
+    color: white;
+
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+}
+
+nav.navbar.bg-app {
+    border-radius: 0px;
+    background: #2FBDAB;
+    color: white;
+    font-family: 'Mako', Helvetica, sans-serif;
+}
+
+button.btn.btn-primary {
+    background: #22577A;
+    border: 0px;
+}
+
+#add-ad-button, .btn-neighborly {
+    background: #FFDE40;
+    background-color: #FFDE40;
+    color: #555;
+    margin: 4rem 0;
+    width: 50%;
+}
+
+.panel {
+    border: 0px solid #fff;
+}
+
+.panel-body.panel-neighborly {
+    background: #EAF2F6;
+    background-color: #EAF2F6;
+}
+
+.panel-footer {
+    border-top: 0px solid #ddd;
+    background-color: #4C5B5C;
+}
+
+img.img-small {
+    width:250px;
+}
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+}
+
+.dropdown-toggle::after {
+    content: none;
+}
+
+.logo {
+    width: 75px;
+    float: left;
+    margin-right: 15px;
+}
