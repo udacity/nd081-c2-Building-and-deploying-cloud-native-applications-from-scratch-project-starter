@@ -222,13 +222,13 @@ API_URL="https://<APP_NAME>.azurewebsites.net/api"
 3. Create a Kubernetes cluster, and verify your connection to it with `kubectl get nodes`.
 4. Deploy app to Kubernetes, and check your deployment with `kubectl config get-contexts`.
 
-### V. Event Hubs and Logic App
+### IV. Event Hubs and Logic App
 
 1. Create a Logic App that watches for an HTTP trigger. When the HTTP request is triggered, send yourself an email notification.
 2. Create a namespace for event hub in the portal. You should be able to obtain the namespace URL.
 3. Add the connection string of the event hub to the Azure Function.
 
-### VI.  Cleaning Up Your Services
+### V.  Cleaning Up Your Services
 
 Before completing this step, make sure to have taken all necessary screenshots for the project! Check the rubric in the classroom to confirm.
 
