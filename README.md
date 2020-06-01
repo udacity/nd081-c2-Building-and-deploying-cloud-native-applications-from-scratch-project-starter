@@ -8,7 +8,9 @@ The Neighborly project is comprised of a front-end application that is built wit
 
 The application makes direct requests to the back-end API endpoints. These are endpoints that we will also build for the server-side of the application.
 
-Example Project URL: http://neighborly-client-v1.azurewebsites.net/
+You can see an example of the deployed app below.
+
+![Deployed App](images/final-app.png)
 
 ## Dependencies
 
