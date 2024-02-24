@@ -42,7 +42,7 @@ In case you need to return to the project later on, it is suggested to store any
 
 ### I. Creating Azure Function App
 
-We need to set up the Azure resource group, region, storage account, and an app name before we can publish.
+We need to set up the Azure resource group, region, storage account, and app name before we can publish.
 
 1. Create a resource group.
 2. Create a storage account (within the previously created resource group and region).
@@ -53,7 +53,7 @@ We need to set up the Azure resource group, region, storage account, and an app 
     Example of successful output, if creating the app `myneighborlyapiv1`:
 
     ```bash
-    Your Linux function app 'myneighborlyapiv1', that uses a consumption plan has been successfully created but is not active until content is published using Azure Portal or the Functions Core Tools.
+    Your Linux function app 'myneighborlyapiv1', which uses a consumption plan has been successfully created but is not active until content is published using Azure Portal or the Functions Core Tools.
     ```
 
 4. Set up a Cosmos DB Account. You will need to use the same resource group, region and storage account, but can name the Cosmos DB account as you prefer. **Note:** This step may take a little while to complete (15-20 minutes in some cases).
@@ -197,7 +197,7 @@ We need to set up the Azure resource group, region, storage account, and an app 
 
 ### II. Deploying the client-side Flask web application
 
-We are going to update the Client-side `settings.py` with published API endpoints. First navigate to the `settings.py` file in the NeighborlyFrontEnd/ directory.
+We are going to update the Client-side `settings.py` with published API endpoints. First, navigate to the `settings.py` file in the NeighborlyFrontEnd/ directory.
 
 Use a text editor to update the API_URL to your published url from the last step.
 ```bash
@@ -222,15 +222,14 @@ API_URL="https://<APP_NAME>.azurewebsites.net/api"
 
 2. Create an Azure Registry and dockerize your Azure Functions. Then, push the container to the Azure Container Registry.
 3. Create a Kubernetes cluster, and verify your connection to it with `kubectl get nodes`.
-4. Deploy app to Kubernetes, and check your deployment with `kubectl config get-contexts`.
+4. Deploy the app to Kubernetes, and check your deployment with `kubectl config get-contexts`.
 
-### IV. Event Hubs and Logic App
+### IV. Event Grid and Logic App
 
 1. Create a Logic App that watches for an HTTP trigger. When the HTTP request is triggered, send yourself an email notification.
-2. Create a namespace for event hub in the portal. You should be able to obtain the namespace URL.
-3. Add the connection string of the event hub to the Azure Function.
+2. Create an Event Grid Topic and Event Subscription of the Endpoint type as Azure Functions. 
 
-### V.  Cleaning Up Your Services
+### V. Cleaning Up Your Services
 
 Before completing this step, make sure to have taken all necessary screenshots for the project! Check the rubric in the classroom to confirm.
 
