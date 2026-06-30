@@ -5,6 +5,10 @@ from bson.json_util import dumps
 from bson.objectid import ObjectId
 import logging
 
+from function_app import app
+
+@app.function_name(name="getAdvertisement")
+@app.route(route="getAdvertisement", methods=["GET", "POST"], auth_level=func.AuthLevel.ANONYMOUS)
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     # example call http://localhost:7071/api/getAdvertisement/?id=5eb6cb8884f10e06dc6a2084

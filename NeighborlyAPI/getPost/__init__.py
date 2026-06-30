@@ -4,6 +4,10 @@ import json
 from bson.json_util import dumps
 from bson.objectid import ObjectId
 
+from function_app import app
+
+@app.function_name(name="getPost")
+@app.route(route="getPost", methods=["GET"], auth_level=func.AuthLevel.ANONYMOUS)
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     id = req.params.get('id')

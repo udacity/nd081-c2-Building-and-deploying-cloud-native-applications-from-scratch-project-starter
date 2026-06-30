@@ -1,6 +1,10 @@
 import azure.functions as func
 import pymongo
 
+from function_app import app
+
+@app.function_name(name="createAdvertisement")
+@app.route(route="createAdvertisement", methods=["POST"], auth_level=func.AuthLevel.ANONYMOUS)
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     request = req.get_json()

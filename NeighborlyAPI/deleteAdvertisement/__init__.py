@@ -2,7 +2,10 @@ import azure.functions as func
 import pymongo
 from bson.objectid import ObjectId
 
+from function_app import app
 
+@app.function_name(name="deleteAdvertisement")
+@app.route(route="deleteAdvertisement", methods=["DELETE"], auth_level=func.AuthLevel.ANONYMOUS)
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     id = req.params.get('id')

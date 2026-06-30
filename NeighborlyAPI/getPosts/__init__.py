@@ -4,7 +4,10 @@ import pymongo
 import json
 from bson.json_util import dumps
 
+from function_app import app
 
+@app.function_name(name="getPosts")
+@app.route(route="getPosts", methods=["GET"], auth_level=func.AuthLevel.ANONYMOUS)
 def main(req: func.HttpRequest) -> func.HttpResponse:
 
     logging.info('Python getPosts trigger function processed a request.')
